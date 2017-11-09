@@ -1,0 +1,11 @@
+.hero-card {
+    width: 30%;
+    padding: 15px;
+    border-radius: 3px;
+    color: #000;
+}
+
+.thumbnail {
+    padding-bottom: 100%;
+    background-color: #ccc;
+}
