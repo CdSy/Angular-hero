@@ -1,5 +1,10 @@
-<div class="hero-card">
-    <!-- <div class="thumbnail" style="background-image: url({{ hero.thumbnail }})"></div> -->
-    <div class="name">{{ hero.name | uppercase }}</div>
-    <div class="description">{{ hero.description }}</div>
+<div class="card-container">
+    <div class="hero-card" 
+        *ngFor="let hero of heroes;"
+        (click)="clickHandler(hero)"
+        [ngClass]="{active: hero.isActive}">
+        <div class="thumbnail" [ngStyle]="{'background-image': 'url(' + hero.thumbnail + ')'}"></div>
+        <div class="name">{{ hero.name | uppercase }}</div>
+        <div class="description">{{ hero.description }}</div>
+    </div>
 </div>
