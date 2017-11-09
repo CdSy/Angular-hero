@@ -1,6 +1,7 @@
-export class Hero {
-  description: string;
+export interface Hero {
+  description?: string;
   name: string;
   id: number;
-  thumbnail: string
+  thumbnail: string;
+  isActive: boolean;
 }
