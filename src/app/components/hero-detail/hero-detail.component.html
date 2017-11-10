@@ -1,0 +1,7 @@
+<div *ngIf="hero" class="form">
+    <label>
+        {{ hero.name | uppercase }} Details
+        <input class="input" [(ngModel)]="hero.name" placeholder="name"/>
+        <textarea class="textarea" [(ngModel)]="hero.description" placeholder="description"></textarea>
+    </label>
+</div>
