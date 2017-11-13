@@ -21,7 +21,21 @@ body, input[text], button {
   font-family: Cambria, Georgia;
 }
 
+.router-link {
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgb(124, 157, 206);
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.router-link:hover {
+  background-color: rgb(94, 132, 185);
+}
+
 * {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }  

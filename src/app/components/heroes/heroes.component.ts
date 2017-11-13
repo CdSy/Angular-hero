@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from '../../services/hero.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -9,17 +10,17 @@ import { HeroService } from '../../services/hero.service';
 })
 
 export class HeroesComponent implements OnInit {
+  constructor(private heroService: HeroService, private messageService: MessageService) {}
+
   heroes: Hero[];
 
   selectedHero: Hero;
   newHero = {
     name: '',
     description: '',
-    thumbnail: './assets/images/hero1.jpg'
+    thumbnail: './assets/images/hero2.jpg'
   };
 
-  constructor(private heroService: HeroService) {
-  }
 
   ngOnInit() {
     this.getHeroes();
@@ -37,7 +38,7 @@ export class HeroesComponent implements OnInit {
     if (this.selectedHero !== checkedHero) {
       this.selectedHero = checkedHero;
     } else {
-      this.selectedHero = undefined;
+      this.selectedHero = null;
     }
   }
 
@@ -46,13 +47,15 @@ export class HeroesComponent implements OnInit {
       const {
         name,
         description = '',
-        thumbnail
+        thumbnail,
+        id = this.heroes.length + 1
       } = this.newHero;
 
-      const newHero = new Hero(name, description, thumbnail);
+      const newHero = new Hero({name, description, thumbnail, id});
       this.heroes.unshift(newHero);
       this.newHero.name = '';
       this.newHero.description = '';
+      this.messageService.add(`New hero added - ${newHero.name}`);
     }
   }
 }

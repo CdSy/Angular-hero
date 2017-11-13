@@ -5,6 +5,7 @@
     border-radius: 3px;
     color: #000;
     box-shadow: 0 3px 12px 0 rgba(10, 10, 10, 0.3);
+    text-decoration: none;
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -26,6 +27,7 @@
     margin-top: 20px;
     margin-bottom: 15px;
     color: rgb(170, 169, 233);
+    font-family: Helvetica;
 }
 
 .thumbnail {
@@ -43,4 +45,5 @@
     justify-content: flex-start;
     width: 900px;
     margin: 0 auto;
+    padding-top: 50px;
 }

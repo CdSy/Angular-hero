@@ -3,11 +3,13 @@ export class Hero {
   name: string;
   thumbnail: string;
   isActive: boolean;
+  id: number;
 
-  constructor (name, description, thumbnail) {
+  constructor ({name, description, thumbnail, id}) {
     this.name = name;
     this.description = description;
     this.isActive = false;
     this.thumbnail = thumbnail;
+    this.id = id;
   }
 }
