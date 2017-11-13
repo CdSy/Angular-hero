@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="form">
+        <label>
+            New Hero:
+            <input class="input" [(ngModel)]="newHero.name" placeholder="name">
+            <textarea class="textarea" 
+                      [(ngModel)]="newHero.description" 
+                      placeholder="description">
+            </textarea>
+            <button class="btn" (click)="addHero()">Add</button>
+        </label>
+    </div>
+</div>
+<div class="card-container">
+    <a routerLink="/detail/{{hero.id}}" class="hero-card"
+        *ngFor="let hero of heroes"
+        (click)="clickHandler(hero)"
+        [class.active]="hero === selectedHero">
+        <div class="thumbnail" [ngStyle]="{'background-image': 'url(' + hero.thumbnail + ')'}"></div>
+        <div class="name">{{ hero.name | uppercase }}</div>
+        <div class="description">{{ hero.description }}</div>
+    </a>
+</div>
